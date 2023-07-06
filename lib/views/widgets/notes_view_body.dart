@@ -39,11 +39,17 @@ class NoteItem extends StatelessWidget {
           ListTile(
             title: Text(
               "first note",
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 26,
+              ),
             ),
             subtitle: Text(
               "first note by mohamed hossam",
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(
+                color: Colors.black.withOpacity(.4),
+                fontSize: 20,
+              ),
             ),
             trailing: IconButton(
                 onPressed: () {},
