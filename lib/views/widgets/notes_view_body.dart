@@ -30,10 +30,11 @@ class NoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.yellow,
+        color: Color.fromARGB(255, 237, 223, 98),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           ListTile(
             title: Text(
@@ -48,9 +49,13 @@ class NoteItem extends StatelessWidget {
                 onPressed: () {},
                 icon: Icon(
                   Icons.delete,
-                  color: Colors.black,
+                  color: Colors.red,
                 )),
           ),
+          Text(
+            "July 6 , 2023",
+            style: TextStyle(color: Colors.black),
+          )
         ],
       ),
     );
