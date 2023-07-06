@@ -14,7 +14,43 @@ class NotesViewBody extends StatelessWidget {
           SizedBox(
             height: 60,
           ),
-          CustomAppBar()
+          CustomAppBar(),
+          NoteItem()
+        ],
+      ),
+    );
+  }
+}
+
+// building note item
+class NoteItem extends StatelessWidget {
+  const NoteItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.yellow,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        children: [
+          ListTile(
+            title: Text(
+              "first note",
+              style: TextStyle(color: Colors.black),
+            ),
+            subtitle: Text(
+              "first note by mohamed hossam",
+              style: TextStyle(color: Colors.black),
+            ),
+            trailing: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.delete,
+                  color: Colors.black,
+                )),
+          ),
         ],
       ),
     );
