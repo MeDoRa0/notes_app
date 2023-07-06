@@ -12,7 +12,7 @@ class NotesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       //set theme in dark mode
-      theme: ThemeData(brightness: Brightness.dark),
+      theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
       home: const NotesView(),
     );
   }
