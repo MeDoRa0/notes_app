@@ -11,6 +11,8 @@ class NotesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //to remove debug mode banner
+      debugShowCheckedModeBanner: false,
       //set theme in dark mode
       theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
       home: const NotesView(),
