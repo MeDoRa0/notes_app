@@ -16,7 +16,10 @@ class NotesViewBody extends StatelessWidget {
             height: 60,
           ),
           //calling CustomAPPBar
-          CustomAppBar(),
+          CustomAppBar(
+            icon: Icons.search,
+            title: 'Notes',
+          ),
           //calling NotesListView
           //we warp with expaned to make all notes appear in screen
           Expanded(child: NotesListView()),
