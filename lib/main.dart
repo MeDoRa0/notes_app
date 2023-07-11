@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:notes_app/constant.dart';
 import 'package:notes_app/views/notes_view.dart';
 
-void main() {
+void main() async {
+  //to intiate hive
+  await Hive.initFlutter();
+  //use await because openbox is future, open note box
+ await Hive.openBox(kNotesBox);
   runApp(const NotesApp());
 }
 
