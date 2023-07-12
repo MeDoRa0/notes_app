@@ -11,8 +11,8 @@ void main() async {
   //to intiate hive
   await Hive.initFlutter();
   Bloc.observer = SimpleBlocObserver();
-  //use await because openbox is future, open note box
-  await Hive.openBox(kNotesBox);
+  //use await because openbox is future, open note box type of NoteModel
+  await Hive.openBox<NoteModel>(kNotesBox);
   //to tell hive to deal with notemodel by  register type adapter named NoteModelAdabter that created in note_model.g.dart
   Hive.registerAdapter(NoteModelAdapter());
   runApp(const NotesApp());

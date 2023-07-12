@@ -14,13 +14,17 @@ class AddNoteCubit extends Cubit<AddNoteState> {
 //use try and catch to check if there is a problem or not
     try {
       //variable noteBox that recive from kNotesBox
-      var noteBox = Hive.box<NoteModel>(kNotesBox);
+      var notesBox = Hive.box<NoteModel>(kNotesBox);
       //if success
+      await notesBox.add(note);
       emit(AddNoteSuccess());
-      await noteBox.add(note);
-    }  catch (e) {
+    } catch (e) {
       //if failure
-      emit(AddNoteFailure(e.toString()));
+      emit(
+        AddNoteFailure(
+          e.toString(),
+        ),
+      );
     }
   }
 }
