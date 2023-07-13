@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import '../../constant.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.onTap});
+  const CustomButton({super.key, this.onTap, this.isLoading = false});
   //i copy this code from onTap info
   final void Function()? onTap;
+  //to show loading icon on button
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +21,23 @@ class CustomButton extends StatelessWidget {
           color: kPrimaryColor,
           borderRadius: BorderRadius.circular(8),
         ),
-        child: const Center(
-          child: Text(
-            'Add',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-            ),
-          ),
+        child: Center(
+          child: isLoading
+          //sizsedbox to adjust loading dimanions
+              ? SizedBox(
+                  height: 25,
+                  width: 25,
+                  child: const CircularProgressIndicator(
+                    color: Colors.white,
+                  ),
+                )
+              : const Text(
+                  'Add',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                  ),
+                ),
         ),
       ),
     );
