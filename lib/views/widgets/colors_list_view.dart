@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 
 class ColorItem extends StatelessWidget {
   const ColorItem({super.key, required this.isSelected, required this.color});
@@ -60,6 +62,8 @@ class _ColorsListviewState extends State<ColorsListview> {
               //this will show the selected color when user press on it
               onTap: () {
                 currentIndex = index;
+                //this will provide the selected color from index in color list
+                BlocProvider.of<AddNoteCubit>(context).color = colors[index];
                 //setState to update UI and show selected color
                 setState(() {});
               },
